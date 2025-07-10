@@ -15,13 +15,11 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Custom app bar with adjusted title position
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  // Left: Search button
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
