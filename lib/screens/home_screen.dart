@@ -27,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 50,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        // color: Colors.red,
                         border: Border.all(color: Colors.green.shade700, width: 2),
                       ),
                       child: Center(
@@ -43,8 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.white,
                     ),
                   ),
-
-                  // Right: Notification and Avatar
                   Align(
                     alignment: Alignment.centerRight,
                     child: Row(
