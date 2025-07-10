@@ -11,16 +11,73 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: Text('Chat Flow'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text('Hello World', style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30,
-        ),),
+      backgroundColor: const Color(0xFF5DB075),
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Custom app bar with adjusted title position
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Left: Search button
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        // color: Colors.red,
+                        border: Border.all(color: Colors.green.shade700, width: 2),
+                      ),
+                      child: Center(
+                        child: Icon(Icons.search, size: 30, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+
+                  // Right: Notification and Avatar
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.notifications_none,
+                              color: Colors.white, size: 30),
+                        ),
+                        SizedBox(width: 10),
+                        CircleAvatar(
+                          backgroundColor: Colors.amberAccent,
+                          radius: 25,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  'Body Content',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
